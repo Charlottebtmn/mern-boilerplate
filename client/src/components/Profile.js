@@ -3,15 +3,26 @@ import api from '../api';
 
 class Profile extends Component {
   constructor(props) {
-    super(props)
+    super(props);
+    this.state = {
+      user : [],
+    };
   }
+
+  // componentDidMount () {
+  //   api.loadUser()
+  //     .then (user => {
+  //       console.log(user)
+  //       this.setState
+  //     }
+  // }
 
   render() {
     return (
       <div className="Profile">
         <div class="columns is-mobile">
           <div class="column">
-            <img src="https://d2ojpxxtu63wzl.cloudfront.net/static/1befd10db74af412748cea4e819081fb_01ace2209d2c6ecc391618cc77d0f5d48e13c9c4da58e708a3ebe64a4dcc153e"/>
+            <img src={this.state.user.length > 0 && this.state.user.pictureUrl}/>
           </div>
           <div class="column">
             <p class="title">Julie</p>

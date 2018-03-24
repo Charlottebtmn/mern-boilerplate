@@ -74,13 +74,13 @@ export default {
 
   isLoggedIn() {
     return localStorage.getItem('user') != null
-  }
+  },
 
-  // getCelebrity() {
-  //   return service
-  //   .get('/countries')
-  //   .then(res => res.data)
-  //   .catch(errHandler);
-  // }
+  getCelebrities() {
+    return service
+    .get('/celebrities')
+    .then(res => res.data)
+    .catch(errHandler);
+  }
 
 };
