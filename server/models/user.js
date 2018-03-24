@@ -3,11 +3,26 @@ const passportLocalMongoose = require('passport-local-mongoose');
 const { Schema } = mongoose;
 
 const userSchema = new Schema({
-  // email: String, // Defined with passportLocalMongoose
+  email: {type:String, required: [true, "An e-mail is required"]},
+  firstName: String,
+  pictureUrl: String,
+  todos: [
+    {
+      _celebrity: { type: Schema.Types.ObjectId, ref: 'Celebrity' },
+      description: String,
+      done: { type: Boolean, default: false},
+    }
+  ],
+  swipes: [
+    {
+      _celebrity: String,
+      isMatched: Boolean,
+    }
+  ]
+
   // hashed: String, // Defined with passportLocalMongoose
   // salt: String, // Defined with passportLocalMongoose
-  name: {type:String, required: [true, "A name is required"]},
-  pictureUrl: String,
+
 });
 
 // Add "email" (instead of "username"), "hash" and "salt" field to store the email (as username), the hashed password and the salt value

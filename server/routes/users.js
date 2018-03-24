@@ -25,6 +25,20 @@ router.get('/', (req, res, next) => {
     })
 });
 
+//Route to get a specific user
+router.get('/:id', function (req, res, next) {
+  let id = req.params.id;
+  User.findById(id)
+    .then(user => {
+      res.json(
+        user
+      );
+    })
+    .catch(error => {
+      console.error(error);
+    });
+});
+
 // Route to add a picture on one user with Cloudinary
 // To perform the request throw Postman, you need
 // - Endpoint: POST http://localhost:3030/api/users/picture
@@ -36,6 +50,7 @@ router.get('/', (req, res, next) => {
 //     <input type="file" name="picture" />
 //     <input type="submit" value="Upload" />
 //   </form>
+
 router.post('/picture-one-user', parser.single('picture'), (req, res, next) => {
   User.findOneAndUpdate({}, {pictureUrl: req.file.url })
     .then(() => {
@@ -44,6 +59,43 @@ router.post('/picture-one-user', parser.single('picture'), (req, res, next) => {
         pictureUrl: req.file.url
       })
     })
+});
+
+// Route to add a Todo to a specific users
+router.post('/todo', passport.authenticate("jwt", config.jwtSession), (req, res, next) => {
+  let user = req.user;
+  User.findByIdAndUpdate(req.user._id, {
+    $push: { todos: {
+      _celebrity: req.body.celebrity,
+      description : req.body.description,
+      }}
+    },
+    {new: true},
+    (err, user) => {
+      if (err) {
+        next(err);
+      } else {
+        res.json(user);
+      }
+    });
+});
+
+// Route to update the swipes of a specific user
+router.post('/swipes', passport.authenticate("jwt", config.jwtSession), (req, res, next) => {
+  let user = req.user;
+  User.findByIdAndUpdate(req.user._id, {
+    $push: { swipes: {
+      _celebrity: req.body.celebrity,
+      isMatched : req.body.isMatched,
+      }}
+  },
+  (err, user) => {
+    if (err) {
+      next(err);
+    } else {
+      res.json(user);
+    }
+  });
 });
 
 module.exports = router;

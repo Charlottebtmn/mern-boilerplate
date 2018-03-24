@@ -12,6 +12,7 @@ var User = require('./models/user');
 var authRoutes = require('./routes/auth');
 var countriesRoutes = require('./routes/countries');
 var usersRoutes = require('./routes/users');
+var celebritiesRoutes = require('./routes/celebrities');
 
 require('./configs/database');
 
@@ -61,6 +62,7 @@ passport.use(strategy);
 app.use('/api', authRoutes);
 app.use('/api/countries', countriesRoutes);
 app.use('/api/users', usersRoutes);
+app.use('/api/celebrities', celebritiesRoutes);
 
 
 // For any routes that starts with "/api", catch 404 and forward to error handler

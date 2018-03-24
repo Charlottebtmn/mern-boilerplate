@@ -11,7 +11,7 @@ const errHandler = err => {
 
 export default {
   service: service,
-  
+
   getCountries() {
     return service
     .get('/countries')
@@ -25,14 +25,14 @@ export default {
       .then(res => res.data)
       .catch(errHandler);
   },
-  
+
   getSecret() {
     return service
       .get('/secret')
       .then(res => res.data)
       .catch(errHandler);
   },
-  
+
   signup(userInfo) {
     return service
       .post('/signup', userInfo)
@@ -75,4 +75,12 @@ export default {
   isLoggedIn() {
     return localStorage.getItem('user') != null
   }
+
+  // getCelebrity() {
+  //   return service
+  //   .get('/countries')
+  //   .then(res => res.data)
+  //   .catch(errHandler);
+  // }
+
 };

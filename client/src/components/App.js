@@ -1,13 +1,9 @@
 import React, { Component } from 'react';
 import { Route, Link, Switch } from 'react-router-dom';
-import Home from './Home';
-import Countries from './Countries';
-import AddCountry from './AddCountry';
-import Secret from './Secret';
-import Login from './Login';
-import Signup from './Signup';
 import api from '../api';
-import logo from '../logo.svg';
+import Conversations from './Conversations';
+import Profile from './Profile';
+import Swipe from './Swipe';
 import './App.css';
 
 class App extends Component {
@@ -23,29 +19,20 @@ class App extends Component {
     api.logout()
   }
 
-  render() {                
+  render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React Countries</h1>
-          <Link to="/">Home</Link> 
-          <Link to="/countries">Countries</Link> 
-          <Link to="/add-country">Add country</Link> 
-          {!api.isLoggedIn() && <Link to="/signup">Signup</Link> }
-          {!api.isLoggedIn() && <Link to="/login">Login</Link> }
-          {api.isLoggedIn() && <Link to="/" onClick={(e) => this.handleLogoutClick(e)}>Logout</Link> }
-          <Link to="/secret">Secret</Link> 
+        <header class="navbar" className="App-header">
+          <Link to="/profile">Profile</Link>
+          <Link to="/swipe">Swipe</Link>
+          <Link to="/conversations">Conversations</Link>
         </header>
         <Switch>
-          <Route path="/" exact component={Home} />
-          <Route path="/countries" component={Countries} />
-          <Route path="/add-country" component={AddCountry} />
-          <Route path="/signup" component={Signup} />
-          <Route path="/login" component={Login} />
-          <Route path="/secret" component={Secret} />
+          <Route path="/profile" exact component={Profile} />
+          <Route path="/swipe" component={Swipe} />
+          <Route path="/conversations" component={Conversations} />
           <Route render={() => <h2>404</h2>} />
-        </Switch>        
+        </Switch>
       </div>
     );
   }
