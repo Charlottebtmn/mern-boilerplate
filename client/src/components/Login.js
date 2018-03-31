@@ -13,7 +13,7 @@ class Login extends Component {
   handleInputChange(stateFieldName, event) {
     let newState = {}
     newState[stateFieldName] = event.target.value
-  
+
     this.setState(newState)
   }
 
@@ -22,14 +22,14 @@ class Login extends Component {
     api.login(this.state.email, this.state.password)
       .then(result => {
         console.log('SUCCESS!')
-        this.props.history.push("/") // Redirect to the home page
+        this.props.history.push("/swipe") // Redirect to the home page
       })
       .catch(err => {
         console.log('ERROR')
       })
   }
 
-  render() {   
+  render() {
     return (
       <div className="Login">
         <h2>Login</h2>

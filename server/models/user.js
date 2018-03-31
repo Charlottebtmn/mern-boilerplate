@@ -6,6 +6,7 @@ const userSchema = new Schema({
   email: {type:String, required: [true, "An e-mail is required"]},
   firstName: String,
   pictureUrl: String,
+  description: String,
   todos: [
     {
       _celebrity: { type: Schema.Types.ObjectId, ref: 'Celebrity' },

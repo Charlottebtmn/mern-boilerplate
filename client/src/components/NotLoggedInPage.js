@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { Route, Link, Switch } from 'react-router-dom';
 import api from '../api';
-import Conversations from './Conversations';
+import Signup from './Signup';
+import Login from './Login';
 import Profile from './Profile';
 import Swipe from './Swipe';
 import './App.css';
@@ -19,7 +20,13 @@ class NotLoggedInPage extends Component {
             <Link to="/signup">Signup</Link>
           </button>
           <p>Already have an account ?</p>
-          <button>Login</button>
+          <button>
+            <Link to="/login">Login</Link>
+          </button>
+          <Switch>
+            <Route path="/signup" exact component={Signup} />
+            <Route path="/login" component={Login} />
+          </Switch>
         </div>
 )}
 }

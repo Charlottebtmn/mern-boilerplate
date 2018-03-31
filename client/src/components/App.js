@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Route, Link, Switch } from 'react-router-dom';
 import api from '../api';
-import Conversations from './Conversations';
 import Profile from './Profile';
 import Swipe from './Swipe';
 import NotLoggedInPage from './NotLoggedInPage';

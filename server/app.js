@@ -5,14 +5,15 @@ const logger = require('morgan');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const passport = require('passport');
+const reactSimpleChatbot = require ('react-simple-chatbot');
 const { Strategy, ExtractJwt } = require("passport-jwt");
 
 const config = require("./config");
 var User = require('./models/user');
 var authRoutes = require('./routes/auth');
-var countriesRoutes = require('./routes/countries');
 var usersRoutes = require('./routes/users');
 var celebritiesRoutes = require('./routes/celebrities');
+var conversationRoutes = require('./routes/conversations')
 
 require('./configs/database');
 
@@ -60,9 +61,9 @@ passport.use(strategy);
 
 // List all your API routes
 app.use('/api', authRoutes);
-app.use('/api/countries', countriesRoutes);
 app.use('/api/users', usersRoutes);
 app.use('/api/celebrities', celebritiesRoutes);
+app.use('/api/conversations', conversationRoutes);
 
 
 // For any routes that starts with "/api", catch 404 and forward to error handler

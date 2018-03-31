@@ -5,28 +5,36 @@ class Profile extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      user : [],
+      userName : "",
+      userEmail : "",
+      userPictureUrl :"",
+      userDescription :"",
     };
   }
 
-  // componentDidMount () {
-  //   api.loadUser()
-  //     .then (user => {
-  //       console.log(user)
-  //       this.setState
-  //     }
-  // }
+  componentDidMount () {
+    if (api.isLoggedIn()) {
+        let user=api.loadUser();
+        console.log(user)
+        this.setState({
+          userName : user.firstName,
+          userEmail : user.email,
+          userPictureUrl : user.pictureUrl,
+          userDescription : user.description,
+        });
+      }
+    }
 
   render() {
     return (
       <div className="Profile">
         <div class="columns is-mobile">
           <div class="column">
-            <img src={this.state.user.length > 0 && this.state.user.pictureUrl}/>
+            <img src={this.state.userPictureUrl}/>
           </div>
           <div class="column">
-            <p class="title">Julie</p>
-            <h2>En train de chercher le sens de la life</h2>
+            <p class="title">{this.state.userName}</p>
+            <h2>{this.state.userDescription}</h2>
           </div>
         </div>
         <div class="box">

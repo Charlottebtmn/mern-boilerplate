@@ -65,7 +65,7 @@ export default {
     const userData = localStorage.getItem('user');
     if (!userData) return false;
     const user = JSON.parse(userData);
-    if (user.token && user.name) {
+    if (user.token && user.firstName) {
       axios.defaults.headers.common['Authorization'] = 'Bearer ' + user.token;
       return user;
     }
@@ -79,6 +79,39 @@ export default {
   getCelebrities() {
     return service
     .get('/celebrities')
+    .then(res => res.data)
+    .catch(errHandler);
+  },
+
+  createConversation(celebrity) {
+    return service
+    .post('/conversations',{celebrity})
+    .then(res => res.data)
+    .catch(errHandler)
+  },
+
+  getConversation(conversation) {
+    return service
+    .get('/conversations/'+conversation)
+    .then(res => {
+      if (res.data.history)
+        localStorage.setItem('cache_'+conversation, res.data.history);
+      return res.data;
+    })
+    .catch(errHandler);
+  },
+
+  getAllConversations() {
+    return service
+    .get('/conversations')
+    .then(res => res.data)
+    .catch(errHandler)
+  },
+
+  saveHistory (conversation) {
+    let history = localStorage.getItem('cache_'+conversation);
+    return service
+    .post('/conversations/'+conversation+'/history', {history})
     .then(res => res.data)
     .catch(errHandler);
   }

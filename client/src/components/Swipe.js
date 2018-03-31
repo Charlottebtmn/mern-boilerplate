@@ -20,10 +20,18 @@ class Swipe extends Component {
       .catch(err => console.log(err))
   }
 
-  handleChange () {
+  handleRedClick () {
     this.setState ({
       celebrities : this.state.celebrities.slice(1)
     });
+  }
+
+  handleGreenClick () {
+    api.createConversation (this.state.celebrities[0]._id)
+      .then (conversation => {
+        console.log(conversation);
+        this.props.history.push('/conversation/'+conversation._id)
+      });
   }
 
   render() {
@@ -53,8 +61,8 @@ class Swipe extends Component {
           <div class="content">
             {this.state.celebrities.length > 0 && this.state.celebrities[0].occupation}<br/>
           </div>
-          <a class="button is-success">Talk to me</a>
-          <a class="button is-danger" onClick={() => {this.handleChange()} }>OMG no</a>
+          <a class="button is-success" onClick={() => {this.handleGreenClick()} }>Talk to me</a>
+          <a class="button is-danger" onClick={() => {this.handleRedClick()} }>OMG no</a>
         </div>
       </div>
     );
