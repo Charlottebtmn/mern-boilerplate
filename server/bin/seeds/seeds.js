@@ -112,7 +112,14 @@ let usersData = [
     firstName: "Charlotte",
     pictureUrl: "https://cdn-images-1.medium.com/fit/c/200/200/1*0NjkkbboryozL6fb54KJjg.png",
     password: "a",
-    description: "YOLO"
+    description: "YOLO",
+    todos: [
+      {
+        _celebrity: "5ab66b2c2e59ca57561f33ac",
+        description: "Drop the Mic everyday",
+        done: false,
+      }
+    ],
   }
 ];
 

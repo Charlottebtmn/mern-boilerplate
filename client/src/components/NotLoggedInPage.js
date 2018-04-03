@@ -14,15 +14,19 @@ class NotLoggedInPage extends Component {
 
   render() {
     return(
-        <div>
-          <p>You are not logged in</p>
-          <button>
-            <Link to="/signup">Signup</Link>
-          </button>
-          <p>Already have an account ?</p>
-          <button>
-            <Link to="/login">Login</Link>
-          </button>
+        <div class="NotLoggedInPage">
+          <div class="content">
+            <h1 class="title is-1">The Good D</h1>
+            <p class="subtitle is-3">Good Date, Good Deed</p>
+            <p>Signup to start dating Famous People and Do Good !</p>
+              <button class="button">
+                <Link to="/signup">Signup</Link>
+              </button >
+              <p><br/>Already have an account ?</p>
+            <button class="button">
+              <Link to="/login">Login</Link>
+            </button>
+          </div>
           <Switch>
             <Route path="/signup" exact component={Signup} />
             <Route path="/login" component={Login} />

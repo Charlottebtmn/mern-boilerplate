@@ -114,6 +114,13 @@ export default {
     .post('/conversations/'+conversation+'/history', {history})
     .then(res => res.data)
     .catch(errHandler);
+  },
+
+  addTodo (celebrityId, description) {
+    return service
+    .post('/users/todos', {celebrityId,description})
+    .then(res => res.data)
+    .catch(errHandler)
   }
 
 };

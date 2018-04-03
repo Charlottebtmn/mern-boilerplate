@@ -14,7 +14,7 @@ class Signup extends Component {
   handleInputChange(stateFieldName, event) {
     let newState = {}
     newState[stateFieldName] = event.target.value
-  
+
     this.setState(newState)
   }
 
@@ -35,15 +35,14 @@ class Signup extends Component {
       })
   }
 
-  render() {   
+  render() {
     return (
       <div className="Signup">
-        <h2>Signup</h2>
         <form>
           Email: <input type="text" value={this.state.email} onChange={(e) => {this.handleInputChange("email", e)}} /> <br/>
           Name: <input type="text" value={this.state.name} onChange={(e) => {this.handleInputChange("name", e)}} /> <br/>
-          Password: <input type="password" value={this.state.password} onChange={(e) => {this.handleInputChange("password", e)}}  /> <br/>
-          <button onClick={(e) => this.handleClick(e)}>Signup</button>
+          Password: <input type="password" value={this.state.password} onChange={(e) => {this.handleInputChange("password", e)}}  /> <br/><br/>
+          <button class="button" onClick={(e) => this.handleClick(e)}>Signup</button>
         </form>
       </div>
     );

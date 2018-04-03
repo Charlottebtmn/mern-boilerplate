@@ -62,11 +62,12 @@ router.post('/picture-one-user', parser.single('picture'), (req, res, next) => {
 });
 
 // Route to add a Todo to a specific users
-router.post('/todo', passport.authenticate("jwt", config.jwtSession), (req, res, next) => {
+router.post('/todos', passport.authenticate("jwt", config.jwtSession), (req, res, next) => {
+  console.log(req.body);
   let user = req.user;
   User.findByIdAndUpdate(req.user._id, {
     $push: { todos: {
-      _celebrity: req.body.celebrity,
+      _celebrity: req.body.celebrityId,
       description : req.body.description,
       }}
     },

@@ -9,20 +9,23 @@ class Profile extends Component {
       userEmail : "",
       userPictureUrl :"",
       userDescription :"",
+      userTodos: [],
     };
   }
 
   componentDidMount () {
     if (api.isLoggedIn()) {
         let user=api.loadUser();
-        console.log(user)
+        console.log(user);
+        console.log(user.todos);
         this.setState({
           userName : user.firstName,
           userEmail : user.email,
           userPictureUrl : user.pictureUrl,
           userDescription : user.description,
+          userTodos: user.todos,
         });
-      }
+      };
     }
 
   render() {
@@ -37,13 +40,20 @@ class Profile extends Component {
             <h2>{this.state.userDescription}</h2>
           </div>
         </div>
+        <h2 class="subtitle is-2">This is your todo List !</h2>
+        {this.state.userTodos.map((t, i) =>
         <div class="box">
-          <p class="title">This is you To-Do List !</p>
-          <p> Action 1 </p>
-          <p> Action 2 </p>
-          <p> Action 3 </p>
-          <p> Action 4 </p>
+          <article class="media">
+            <div class="media-content">
+              <div class="content">
+                <p>
+                  {t.description}
+                </p>
+              </div>
+            </div>
+          </article>
         </div>
+      )}
       </div>
     );
   }

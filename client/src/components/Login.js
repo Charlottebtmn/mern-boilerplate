@@ -32,11 +32,10 @@ class Login extends Component {
   render() {
     return (
       <div className="Login">
-        <h2>Login</h2>
         <form>
           Email: <input type="text" value={this.state.email} onChange={(e) => {this.handleInputChange("email", e)}} /> <br/>
-          Password: <input type="password" value={this.state.password} onChange={(e) => {this.handleInputChange("password", e)}}  /> <br/>
-          <button onClick={(e) => this.handleClick(e)}>Login</button>
+          Password: <input type="password" value={this.state.password} onChange={(e) => {this.handleInputChange("password", e)}}  /><br/> <br/>
+          <button class="button" onClick={(e) => this.handleClick(e)}>Login</button>
         </form>
       </div>
     );

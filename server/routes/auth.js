@@ -57,6 +57,7 @@ router.post('/login', (req, res, next) => {
           pictureUrl: user.pictureUrl,
           email: user.email,
           description: user.description,
+          todos: user.todos,
         });
       }
     });
