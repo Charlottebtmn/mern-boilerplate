@@ -15,40 +15,50 @@ class Profile extends Component {
 
   componentDidMount () {
     if (api.isLoggedIn()) {
-        let user=api.loadUser();
-        console.log(user);
-        console.log(user.todos);
-        this.setState({
-          userName : user.firstName,
-          userEmail : user.email,
-          userPictureUrl : user.pictureUrl,
-          userDescription : user.description,
-          userTodos: user.todos,
+        api.getProfile().then(user => {
+          console.log("DEBUG user", user);
+          console.log(user.todos);
+          this.setState({
+            userName : user.firstName,
+            userEmail : user.email,
+            userPictureUrl : user.pictureUrl,
+            userDescription : user.description,
+            userTodos: user.todos,
+          });
         });
       };
+    }
+
+    logout () {
+      api.logout();
+      this.props.history.push("/login")
     }
 
   render() {
     return (
       <div className="Profile">
         <div class="columns is-mobile">
-          <div class="column">
+          <div class="profile-first-square column">
             <img src={this.state.userPictureUrl}/>
           </div>
           <div class="column">
-            <p class="title">{this.state.userName}</p>
-            <h2>{this.state.userDescription}</h2>
+            <br/>            <br/>
+            <p class="titles title is-3">{this.state.userName}</p>
+            <p class="subtitle is-5">{this.state.userDescription}</p>
+            <button class="is-small">Add/change profile pic</button>
+            <button onClick={this.logout.bind(this)}>Log Out</button>
           </div>
         </div>
-        <h2 class="subtitle is-2">This is your todo List !</h2>
+        <h4 class="titles title is-4">This is your todo List !</h4>
         {this.state.userTodos.map((t, i) =>
         <div class="box">
           <article class="media">
             <div class="media-content">
               <div class="content">
-                <p>
-                  {t.description}
-                </p>
+                <label class="checkbox">
+                  <input type="checkbox"/>
+                    {"   "+t.description}
+                </label>
               </div>
             </div>
           </article>

@@ -1,3 +1,46 @@
+@font-face {
+  font-family: 'SourceSansPro';
+  font-style: normal;
+  font-weight: normal;
+  src:
+    local('SourceSansPro'),
+    local('SourceSansPro'),
+    url(./fonts/SourceSansPro-Regular.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'IBMPlexSerif';
+  font-style: normal;
+  font-weight: normal;
+  src:
+    local('IBMPlexSerif'),
+    local('IBMPlexSerif'),
+    url(./fonts/IBMPlexSerif-Regular.ttf) format('truetype');
+}
+
+
+* {
+  font-family: 'SourceSansPro';
+  color: #040e1c;
+}
+
+#root .titles {
+  font-family: 'IBMPlexSerif';
+  color: #ec4e20;
+}
+
+.title {
+  color: #ec4e20;
+}
+
+.centered {
+  text-align: center;
+}
+
+.profile-first-square {
+  margin-top: 15px;
+}
+
 .App {
   text-align: center;
 }
@@ -7,8 +50,12 @@
   height: 80px;
 }
 
+.card-image {
+  margin-top:15px
+}
+
 .App-header {
-  background-color: #222;
+  background-color: #fec0aa;
   height: 88px;
   padding: 20px;
   color: white;
@@ -31,6 +78,14 @@
   text-align: center;
   margin : 20px 30px;
 
+}
+
+.logo {
+  height: 55px;
+}
+
+.navbar {
+  background-color: #FFDBCE;
 }
 
 @keyframes App-logo-spin {

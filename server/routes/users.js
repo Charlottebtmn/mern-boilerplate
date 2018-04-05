@@ -26,17 +26,10 @@ router.get('/', (req, res, next) => {
 });
 
 //Route to get a specific user
-router.get('/:id', function (req, res, next) {
-  let id = req.params.id;
-  User.findById(id)
-    .then(user => {
-      res.json(
-        user
-      );
-    })
-    .catch(error => {
-      console.error(error);
-    });
+router.get('/profile', passport.authenticate("jwt", config.jwtSession), function (req, res, next) {
+    res.json(
+      req.user
+    );
 });
 
 // Route to add a picture on one user with Cloudinary

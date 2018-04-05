@@ -24,10 +24,15 @@ class LoggedInPage extends Component {
     return (
         <div className="App">
           <header class="navbar" className="App-header">
-            <Link to="/profile">Profile</Link>
-            <Link to="/swipe">Swipe</Link>
-            <Link to="/conversationlist">Conversations</Link>
-            <button onClick={this.logout.bind(this)}>Log Out</button>
+            <Link to="/profile">
+              <img class="logo" src="/profile.png" />
+            </Link>
+            <Link to="/swipe">
+              <img class="logo" src="/the-good-d.png" />
+            </Link>
+            <Link to="/conversationlist">
+              <img class="logo" src="/messages.png" />
+            </Link>
           </header>
           <Switch>
             <Route path="/profile" exact component={Profile} />

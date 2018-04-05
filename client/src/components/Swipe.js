@@ -51,18 +51,24 @@ class Swipe extends Component {
           </figure>
         </div>
         <div class="card-content">
-          <div class="media">
-            <div class="media-left">
-              <figure class="image is-48x48">
-              </figure>
-            </div>
-              <p class="title is-4">{this.state.celebrities.length > 0 && this.state.celebrities[0].firstName}</p>
+          <div class="media centered">
+              <p class="titles title is-4">{this.state.celebrities.length > 0 && this.state.celebrities[0].firstName}</p>
           </div>
           <div class="content">
             {this.state.celebrities.length > 0 && this.state.celebrities[0].occupation}<br/>
           </div>
-          <a class="button is-success" onClick={() => {this.handleGreenClick()} }>Talk to me</a>
-          <a class="button is-danger" onClick={() => {this.handleRedClick()} }>OMG no</a>
+          <div class="level is-mobile">
+            <div class="level-left">
+              <div class="level-item">
+                <a class="button is-success" onClick={() => {this.handleGreenClick()} }>Talk to me</a>
+                </div>
+                </div>
+                <div class="level-right">
+                  <div class="level-item">
+                <a class="button is-danger" onClick={() => {this.handleRedClick()} }>OMG no</a>
+                </div>
+            </div>
+          </div>
         </div>
       </div>
     );

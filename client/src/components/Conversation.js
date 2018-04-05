@@ -1,7 +1,18 @@
 import React, { Component } from 'react';
 import ChatBot from 'react-simple-chatbot';
 import api from '../api';
+import { ThemeProvider } from 'styled-components';
+import image from '../temp.png'
+ChatBot.defaultProps.botAvatar="https://metrouk2.files.wordpress.com/2018/02/845144130.jpg?w=748&h=513&crop=1"
+ChatBot.defaultProps.userAvatar="https://metrouk2.files.wordpress.com/2018/02/845144130.jpg?w=748&h=513&crop=1"
 
+const theme = {
+  background: '#fffff',
+  botBubbleColor: '#ec4e20',
+  botFontColor: '#040e1c',
+  userBubbleColor: '#fec0aa',
+  userFontColor: '#040e1c',
+};
 
 class Conversation extends Component {
   constructor(props) {
@@ -44,12 +55,25 @@ class Conversation extends Component {
 
   disp(){
     if (this.state.conversation._celebrity) {
-      return (<ChatBot
-        cache={true}
-        cacheName={'cache_'+this.state.conversation._id}
-        steps={this.state.conversation._celebrity.conversationSteps}
-      />)
-      }
+      return (
+        <div>
+        <br/>
+        <p class="titles title is-4">Your Conversation with {this.state.conversation._celebrity.firstName}</p>
+        <ThemeProvider theme={theme}>
+          <ChatBot
+                  hideUserAvatar={true}
+                  hideBotAvatar={true}
+                  hideSubmitButton={true}
+                  hideHeader={true}
+                  botAvatar={image}
+                  userAvatar={this.state.conversation._user.pictureUrl}
+                  cache={true}
+                  cacheName={'cache_'+this.state.conversation._id}
+                  steps={this.state.conversation._celebrity.conversationSteps}
+          />
+        </ThemeProvider>
+        </div>
+      )}
       else {
         return <div>Pas trouvé</div>
       }

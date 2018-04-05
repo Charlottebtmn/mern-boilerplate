@@ -34,6 +34,7 @@ router.get('/:id', function (req, res, next) {
 router.post('/', passport.authenticate("jwt", config.jwtSession), (req, res, next) => {
   Conversation.find({_user:req.user._id,_celebrity:req.body.celebrity})
     .then ( (convs) => {
+      console.log(convs);
       if (convs.length === 0) {
         console.log(req.body.celebrity);
         let user = req.user._id;

@@ -76,6 +76,13 @@ export default {
     return localStorage.getItem('user') != null
   },
 
+  getProfile() {
+    return service
+    .get('users/profile')
+    .then(res => res.data)
+    .catch(errHandler);
+  },
+
   getCelebrities() {
     return service
     .get('/celebrities')

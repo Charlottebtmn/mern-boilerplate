@@ -5,7 +5,10 @@ const { Schema } = mongoose;
 const userSchema = new Schema({
   email: {type:String, required: [true, "An e-mail is required"]},
   firstName: String,
-  pictureUrl: String,
+  pictureUrl: {
+    type: String,
+    default: "https://www.idlidu.com/Content/images/default.png"
+  },
   description: String,
   todos: [
     {
