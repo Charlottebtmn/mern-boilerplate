@@ -29,11 +29,13 @@ class Conversation extends Component {
           if (conversationSteps[iStep].options && Array.isArray(conversationSteps[iStep].options)) {
             for (let iOption = 0; iOption < conversationSteps[iStep].options.length; iOption++) {
               let formerTrigger = conversationSteps[iStep].options[iOption].trigger;
-              conversationSteps[iStep].options[iOption].trigger = ({ value, steps }) => {
-                api.addTodo(conversation._celebrity._id,conversation._celebrity.todos[conversationSteps[iStep].options[iOption].todoId])
-                // console.log("DEBUG todo", conversation._celebrity.todos[conversationSteps[iStep].options[iOption].todoId]);
-                // console.log("DEBUG trigger", conversationSteps[iStep].options[iOption].trigger);
-                return formerTrigger
+              if (conversation._celebrity._id,conversation._celebrity.todos[conversationSteps[iStep].options[iOption].todoId]) {
+                conversationSteps[iStep].options[iOption].trigger = ({ value, steps }) => {
+                  api.addTodo(conversation._celebrity._id,conversation._celebrity.todos[conversationSteps[iStep].options[iOption].todoId])
+                  // console.log("DEBUG todo", conversation._celebrity.todos[conversationSteps[iStep].options[iOption].todoId]);
+                  // console.log("DEBUG trigger", conversationSteps[iStep].options[iOption].trigger);
+                  return formerTrigger
+                }
               }
             }
           }
@@ -63,7 +65,6 @@ class Conversation extends Component {
           <ChatBot
                   hideUserAvatar={true}
                   hideBotAvatar={true}
-                  hideSubmitButton={true}
                   hideHeader={true}
                   botAvatar={image}
                   userAvatar={this.state.conversation._user.pictureUrl}

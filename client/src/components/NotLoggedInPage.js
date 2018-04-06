@@ -15,10 +15,12 @@ class NotLoggedInPage extends Component {
   render() {
     return(
         <div class="NotLoggedInPage">
-          <div class="content">
-            <h1 class="title is-1">The Good D</h1>
-            <p class="subtitle is-3">Good Date, Good Deed</p>
-            <p>Signup to start dating Famous People and Do Good !</p>
+          <div class="header-home-page">
+            <img class="img-home-page" src="/the-good-d.png"/>
+            <p class="subtitle is-5">Good Date, Good Deed</p>
+          </div>
+          <div class="subblock-home-page content">
+            <p>Signup to start dating Famous People <br/> and Do Good Things!</p>
               <button class="button">
                 <Link to="/signup">Signup</Link>
               </button >
@@ -26,13 +28,13 @@ class NotLoggedInPage extends Component {
             <button class="button">
               <Link to="/login">Login</Link>
             </button>
-          </div>
-          <Switch>
-            <Route path="/signup" exact component={Signup} />
-            <Route path="/login" component={Login} />
-          </Switch>
+            </div>
+            <Switch>
+              <Route path="/signup" exact component={Signup} />
+              <Route path="/login" component={Login} />
+            </Switch>
         </div>
-)}
+    )}
 }
 
 export default NotLoggedInPage;

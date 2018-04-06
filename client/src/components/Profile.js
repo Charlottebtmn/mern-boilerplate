@@ -5,7 +5,7 @@ class Profile extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      userName : "",
+      firstName : "",
       userEmail : "",
       userPictureUrl :"",
       userDescription :"",
@@ -19,7 +19,7 @@ class Profile extends Component {
           console.log("DEBUG user", user);
           console.log(user.todos);
           this.setState({
-            userName : user.firstName,
+            firstName : user.firstName,
             userEmail : user.email,
             userPictureUrl : user.pictureUrl,
             userDescription : user.description,
@@ -37,13 +37,13 @@ class Profile extends Component {
   render() {
     return (
       <div className="Profile">
-        <div class="columns is-mobile">
+        <div class=" columns is-mobile">
           <div class="profile-first-square column">
             <img src={this.state.userPictureUrl}/>
           </div>
           <div class="column">
             <br/>            <br/>
-            <p class="titles title is-3">{this.state.userName}</p>
+            <p class="titles title is-3">{this.state.firstName}</p>
             <p class="subtitle is-5">{this.state.userDescription}</p>
             <button class="is-small">Add/change profile pic</button>
             <button onClick={this.logout.bind(this)}>Log Out</button>

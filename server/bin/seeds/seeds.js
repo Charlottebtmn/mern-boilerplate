@@ -223,9 +223,9 @@ let celebrityData = [
   {
     firstName: "Stella",
     lastName: "Mc Cartney",
-    occupation: "Fashion Designer",
-    pictureUrl: "http://retailinasia.com/wp-content/uploads/2018/02/Stella-McCartney-Kering-divorce-1-770x515.jpg",
-    todos:["Watch the true cost","Switch to vintage clothes","Check out LNS"],
+    occupation: "Being naked is #1 sustainable option",
+    pictureUrl: "http://vegnews.com/web/uploads/asset/10320/file/VegNews.StellaMcCartney.png",
+    todos:["Watch the true cost","Switch to vintage clothes","Check out lenouveaustandard.com"],
     conversationSteps: [
       {
         id: '1',
@@ -235,33 +235,33 @@ let celebrityData = [
       {
         id: '2',
         options: [
-          { value: 1, label: 'Hello', trigger: '2' },
-          { value: 2, label: 'Ouh, nice pic! Where do you live?', trigger: '3' },
-          { value: 3, label: '(...)', trigger: '5' },
+          { value: 1, label: 'Hello', trigger: '7' }
         ],
       },
       {
         id: '3',
         message: 'Ouh, nice pic! Where do you live?',
-        trigger: '3',
+        trigger: '4',
       },
 
       {
-      id: '4',
-      user: true,
-      trigger: '5',
+        id: '4',
+        user: true,
+        trigger: '5',
       },
-      {
-      id: '5',
-      message: 'And how is it in {previousValue}?',
-      end: true,
-    },
 
-    {
+      {
+        id: '5',
+        message: 'And how is it in {previousValue}?',
+        trigger: '6',
+      },
+
+      {
         id: '6',
         options: [
           { value: 1, label: 'Yup, it`s cool', trigger: '7' },
-          { value: 2, label: 'Mwa... there`s nothing much to do...', trigger: '7' },],
+          { value: 2, label: 'Mwa... there`s nothing much to do...', trigger: '7' },
+        ],
       },
 
       {
@@ -269,11 +269,13 @@ let celebrityData = [
         message: 'So, wassup?',
         trigger: '8',
       },
+
       {
         id: '8',
         options: [
           { value: 1, label: 'not much. You?', trigger: '9' },
-          { value: 2, label: 'I think I`ll go shopping', trigger: '' },],
+          { value: 2, label: 'I think I`ll go shopping', trigger: '23' },
+        ],
       },
 
       {
@@ -281,80 +283,135 @@ let celebrityData = [
         message: 'Well, I`m launching a new brand! For men!',
         trigger: '10',
       },
+
       {
         id: '10',
         options: [
           { value: 1, label: 'You work in fashion?', trigger: '11' },
-          { value: 2, label: 'I`m not interested in clothes', trigger: '' },],
+          { value: 2, label: 'I`m not interested in clothes', trigger: '23' },],
       },
 
       {
         id: '11',
-        message: 'Well... I`m hacking fashion. ahah.',
+        message: 'Well... I`m hacking fashion. ahah. Also I`m the daughter of Paul Mc Cartney but i owe nothing to my dad, k ?',
         trigger: '12',
       },
+
       {
         id: '12',
         options: [
-          { value: 1, label: 'Tell me more', trigger: '13' },],
+          { value: 1, label: 'Haha ok. Tell me more', trigger: '13' },
+          { value: 2, label: 'I LOVE YOUR DAD', trigger:'25'}
+        ],
       },
+
       {
         id: '13',
         message: 'Actually I don`t like fashion. It pollutes. It pays unfairly. I believe no human should suffer for fashion, and neither should the planet.',
         trigger: '14',
       },
+
       {
         id: '14',
         options: [
           { value: 1, label: 'I know all that. I agree!', trigger: '15' },
-          { value: 2, label: 'I`m so shocked', trigger: '15' },],
+          { value: 2, label: 'I had no idea about that... !', trigger: '15' },],
       },
 
       {
         id: '15',
-        message: 'Yeah, you should watch The True cost, it`s a great documentary about it.',
-        trigger: '16',
+        message: 'Yeah, you should watch The True cost, it`s great documentary about it.',
+        trigger: '26',
       },
+
       {
         id: '16',
         options: [
-          { value: 1, label: 'And how do you hack fashion, exactly?', trigger: '17' },],
+          { value: 1, label: 'And how do you hack fashion, exactly?', trigger: '17' },
+        ],
       },
+
       {
         id: '17',
         message: 'We make desirable, beautiful modern products ... I approach the business in a way that I feel is morally correct and modern. It doesn’t mean that style and luxury need to be sacrificed.',
         trigger: '18',
       },
+
       {
         id: '18',
         options: [
           { value: 1, label: 'That`s nice! but i can`t afford it :(', trigger: '19' },],
       },
+
       {
         id: '19',
-        message: 'It`s no problem! My best advice would be: switch to vintage. It`s cheaper and so much better that fast-fashion.',
+        message: 'It`s no problem! There are so many ways to consume fashion more sustainably. My best advice would be: switch to vintage. It`s cheaper and so much better that fast-fashion.',
         trigger: '20',
       },
+
       {
         id: '20',
         message: 'For instance you could: - go to thrift stores - exange clothes with your friends - borrow your mom`s and dad`s clothes ;)',
         trigger: '21',
       },
+
       {
         id: '21',
         options: [
-          { value: 1, label: 'Wow, thanks Stella !', trigger: '22' },],
-      },
-      {
-        id: '22',
-        message: 'Oh and I forgot: you should check this out: Le Nouveau standard, the best website EVER to find sustainable brands',
-        options: [
-          { value: 1, label: 'will do', todoId:'2' },
-          { value: 2, label: 'i don`t care' },
+          { value: 1, label: 'Wow, thanks Stella ! Adding this to my to-do list !', trigger: '22', todoId:1 },
         ],
       },
 
-  ]},
+      {
+        id: '22',
+        message: 'Also there are cheaper sustainable brands. You should check this out: Le Nouveau standard, the best website EVER to find sustainable brands',
+        trigger: '27',
+      },
+
+      {
+        id: '23',
+        message: 'Okay :( U sure ?',
+        trigger: '24'
+      },
+
+      {
+        id: '24',
+        options: [
+          { value: 1, label: '... ok keep talking to me', trigger: '9' },
+          { value: 2, label: 'Yup pretty much', trigger: '23' },
+        ],
+      },
+
+      {
+        id: '25',
+        message: 'OMG I shouldn`t have mentionned that. Sure you don`t want to talk about fashion ? I`ve got some seriously interesting things to say, You`ll see',
+        trigger: '24'
+      },
+
+      {
+        id: '26',
+        options: [
+          { value: 1, label: 'Sound pretty interesting, let me add that to my to-do list !', trigger: '16', todoId:0 },
+          { value: 2, label: 'Not interested, but tell me more about fashion !', trigger: '16' },
+          { value: 3, label: 'I really don`t care about fashion :/', trigger: '23' },
+        ],
+      },
+
+      {
+        id: '27',
+        options: [
+          { value: 1, label: 'Awesome. Adding it to my to-do list.', trigger: '28', todoId:2},
+        ],
+      },
+
+      {
+        id: '28',
+        message: 'My pleasure, hope I convinced you ;)',
+        end: true,
+      },
+    ]
+  },
+
   {
     firstName: "Gandhi",
     lastName: "Mohandas Karamchand",

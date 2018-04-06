@@ -57,7 +57,7 @@
 .App-header {
   background-color: #fec0aa;
   height: 88px;
-  padding: 20px;
+  padding: 15px;
   color: white;
 }
 
@@ -81,14 +81,46 @@
 }
 
 .logo {
-  height: 55px;
+  height: 62px;
+
 }
 
 .navbar {
   background-color: #FFDBCE;
 }
 
+.logo-home-page {
+  height: 50px;
+}
+
+.img-home-page {
+  width: 170px;
+  margin-bottom: -10px
+}
+
+.subblock-home-page {
+  margin-top: 20px;
+}
+
+.swipes {
+  height: 110px;
+}
+
+#root .middle-logo {
+  margin-right: 30px;
+  margin-left: 30px
+}
+
+#root .header-home-page {
+  padding-bottom: 20px;
+  background-color: #fec0aa;
+}
+
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
+}
+
+.rsc-os-option .rsc-os-option-element {
+  background: #fec0aa;
 }

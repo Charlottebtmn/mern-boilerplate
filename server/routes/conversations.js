@@ -6,8 +6,10 @@ const config = require('../config');
 var router = express.Router();
 
 // Route to get all conversations
-router.get('/', (req, res, next) => {
-  Conversation.find()
+router.get('/', passport.authenticate("jwt", config.jwtSession), (req, res, next) => {
+  Conversation.find({
+    _user:req.user._id
+  })
     .populate("_celebrity")
     .then(conversations => {
       res.json(conversations);

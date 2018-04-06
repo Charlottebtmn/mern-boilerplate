@@ -28,7 +28,7 @@ class LoggedInPage extends Component {
               <img class="logo" src="/profile.png" />
             </Link>
             <Link to="/swipe">
-              <img class="logo" src="/the-good-d.png" />
+              <img class="logo middle-logo" src="/the-good-d.png" />
             </Link>
             <Link to="/conversationlist">
               <img class="logo" src="/messages.png" />
