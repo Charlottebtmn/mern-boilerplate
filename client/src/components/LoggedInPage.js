@@ -39,6 +39,7 @@ class LoggedInPage extends Component {
             <Route path="/swipe" component={Swipe} />
             <Route path="/conversationlist" component={ConversationList} />
             <Route path="/conversation/:id" component={Conversation} />
+            <Route path="/" component={Swipe} />
             <Route render={() => <h2>404</h2>} />
           </Switch>
         </div>
