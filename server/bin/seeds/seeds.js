@@ -578,6 +578,63 @@ let celebrityData = [
   },
 
   {
+    firstName: "Sacha",
+    lastName: "???",
+    occupation: "Pikachu, thunder Attack !",
+    pictureUrl: "https://medias.spotern.com/spots/w1280/65622.jpg",
+    conversationSteps: [
+      {
+        id: '1',
+        message: 'Oh ! A wild pokemon !',
+        trigger: '2',
+      },
+
+      {
+        id: '2',
+        options: [
+          { value: 1, label: 'Dude, I`m not a Pokemon', trigger: '3' },
+          { value: 2, label: 'Mmm okay you like that kind of games ? ... Pika pika', trigger: '7' },
+        ],
+      },
+
+      {
+        id: '3',
+        message: 'PIKACHU, ATTACK',
+        trigger: '4',
+      },
+
+      {
+        id: '4',
+        options: [
+          { value: 1, label: 'God dammit you are SO weird', trigger: '5' },
+          { value: 2, label: 'Okay... ', trigger: '5' },
+        ],
+      },
+
+      {
+        id: '5',
+        message: '"Sacha just escaped the fight"',
+        trigger: '6',
+      },
+
+      {
+        id: '6',
+        options: [
+          { value: 1, label: 'What the actual fuck', end:true },
+        ],
+      },
+
+      {
+        id: '7',
+        message: 'OMG I LOVE PIKACHUS',
+        trigger: '4',
+      },
+
+    ]
+  },
+
+
+  {
     firstName: "Johnny",
     lastName: "Hallyday",
     occupation: "Que je t'aime",
@@ -617,6 +674,450 @@ let celebrityData = [
       },
     ]
   },
+
+  {
+    firstName: "Oprah",
+    lastName: "Winfrey",
+    occupation: "Future President of the USA",
+    pictureUrl: "https://cdn.luxatic.com/wp-content/uploads/2017/11/Oprah-Winfrey.jpg",
+    todos:["Make a random present to someone !"],
+    conversationSteps: [
+      {
+        id: '1',
+        message: 'HELLOOOOO AMERICAAAAA',
+        trigger: '2',
+      },
+
+      {
+        id: '2',
+        message: 'Oops sorry. Occupational Hazard',
+        trigger: '3',
+      },
+
+      {
+        id: '3',
+        message: 'Pssst',
+        trigger: '4',
+      },
+
+      {
+        id: '4',
+        message: 'You want a car ?',
+        trigger: '5',
+      },
+
+      {
+        id: '5',
+        options: [
+          { value: 1, label: 'REALLY OMG THANK YOU OPRAH *faints*', trigger: '6' },
+          { value: 2, label: 'Hmm, okay ?', trigger: '13' },
+          { value: 3, label: 'I don`t accept present from strangers', trigger: '15' },
+        ],
+      },
+
+      {
+        id: '6',
+        message: 'Dude wake up !!',
+        trigger: '7',
+      },
+
+      {
+        id: '7',
+        options: [
+          { value: 1, label: 'Pfffiou sorry ! Not used to people being so generous', trigger: '8' },
+        ],
+      },
+
+      {
+        id: '8',
+        message: 'Haha it`s fine. Actually it`s just the way I am ! And you know what ? It makes me reaaaally happy',
+        trigger: '9',
+      },
+
+      {
+        id: '9',
+        message: 'Just make a random present to someone you know from time to time. It will make them happy, and you at the same time ;)',
+        trigger: '10',
+      },
+
+      {
+        id: '10',
+        options: [
+          { value: 1, label: 'Wow you`re right. I will !', trigger: '11', todoId:0 },
+          { value: 2, label: 'I don`t have money to do that :(', trigger: '' },
+        ],
+      },
+
+      {
+        id: '11',
+        message: 'Doesn`t have to be a car everytime!! Just a small attention will make it ;)',
+        trigger: '12',
+      },
+
+      {
+        id: '12',
+        message: 'Shoot I`m late. I`m meeting Barack to talk about *cough* things. Cheers !',
+        end:true,
+      },
+
+      {
+        id: '13',
+        message: 'Oh no I gave my last car yesterday :/ just realized ! sorry :/',
+        trigger: '14',
+      },
+
+      {
+        id: '14',
+        message: 'Actually I`ve got some advice for you',
+        trigger: '9',
+      },
+
+      {
+        id: '15',
+        message: 'Wooh okay sorry for trying to be NICE',
+        trigger: '14',
+      },
+
+    ]
+  },
+
+  {
+    firstName: "Hermione",
+    lastName: "Granger",
+    occupation: "I like red-haired people",
+    pictureUrl: "https://cnet3.cbsistatic.com/img/IiSojZnaZ1aXq5qoTYmLR6zu-9s=/570x0/2015/01/26/32532904-b8d8-4f68-99ad-a77766e9d145/emmawatson-harry-potter-and-the-deathly-hallows-pt-1.jpg",
+    todos:["Read one book per month"],
+    conversationSteps: [
+      {
+        id: '1',
+        message: 'Wingardium Leviosa !',
+        trigger: '2',
+      },
+      {
+        id: '2',
+        options: [
+          { value: 1, label: 'Aaaaaaah help', trigger: '3' },
+        ],
+      },
+
+      {
+        id: '3',
+        message: 'oooh Sorry !! I was just rehearsing my fvourite trick :)',
+        trigger: '4',
+      },
+
+      {
+        id: '4',
+        options: [
+          { value: 1, label: 'Mine is "Avada Kedavra"', trigger: '5' },
+        ],
+      },
+
+      {
+        id: '5',
+        message: '"Hermione lies on the floor. She`s not breathing anymore"',
+        trigger: '6'
+      },
+
+      {
+        id: '6',
+        options: [
+          { value: 1, label: 'WHAT HAVE I DONE', trigger: '7' },
+          { value: 2, label: 'Mouahahaha now I can do the same to Potter', trigger: '13' },
+        ],
+      },
+
+      {
+        id: '7',
+        message: '"Hermione wakes up"',
+        trigger: '8'
+      },
+
+      {
+        id: '7',
+        message: 'haha you thought I was dead ? You`re even more stupid than my friends.',
+        trigger: '8'
+      },
+
+      {
+        id: '8',
+        message: 'You should read more. One book per month, I dare you !',
+        trigger: '9'
+      },
+
+      {
+        id: '9',
+        options: [
+          { value: 1, label: 'Good advice. Will do !', trigger: '10', todoId:0 },
+          { value: 2, label: 'I hate books', trigger: '12' },
+        ],
+      },
+
+      {
+        id: '10',
+        message: 'Cool :)',
+        trigger: '11'
+      },
+
+      {
+        id: '11',
+        message: 'Anyways I only like red haired people. You`re not my type. I`m outta here !',
+        end: true
+      },
+
+      {
+        id: '12',
+        message: 'Pfff you`re really all the same.',
+        trigger: '11'
+      },
+
+      {
+        id: '13',
+        options: [
+          { value: 1, label: 'You take off your mask and reveal your Voldemort`s face', trigger: '14' },
+          { value: 2, label: 'No, kidding... but, hum, Hermione, are you okay ?', trigger: '7' },
+        ],
+      },
+
+      {
+        id: '14',
+        options: [
+          { value: 1, label: 'Evil Laugh in ParselTongue', trigger: '15' },
+        ],
+      },
+
+      {
+        id: '15',
+        options: [
+          { value: 1, label: 'Okay I better go before anyone finds her body', trigger: '7' },
+          { value: 2, label: 'Damn, maybe it was a mistake. Hermione ?', trigger: '7' },
+        ],
+      },
+
+    ]
+  },
+
+  {
+    firstName: "Omar",
+    lastName: "Sy",
+    occupation: "Don't worry be happy",
+    pictureUrl: "https://pbs.twimg.com/profile_images/901205210902745089/uGtqyqg3_400x400.jpg",
+    todos:["Smile to one person per day","Sing a song very loudly everyday","Text a friend you haven't seen in a long time !"],
+    conversationSteps: [
+          {
+            id: '1',
+            message: 'Hahahaha',
+            trigger: '2',
+          },
+
+          {
+            id: '2',
+            options: [
+              { value: 1, label: 'Dude what is so funny ?', trigger: '3' },
+              { value: 2, label: 'HAHAHAHHA', trigger: '1' },
+            ],
+          },
+
+          {
+            id: '3',
+            message: 'Aaaaaah. I don`t know I`m just really happy',
+            trigger: '6',
+          },
+
+          {
+            id: '4',
+            message: 'Well I see I have another life-kiffeur here :)',
+            trigger: '5',
+          },
+
+          {
+            id: '5',
+            message: 'I know a simple trick to be happier everyday. Wanna know it ?',
+            trigger: '7',
+          },
+
+          {
+            id: '6',
+            options: [
+              { value: 1, label: 'Me TOO', trigger: '4' },
+              { value: 2, label: 'How do you do that ?', trigger: '8' },
+              { value: 3, label: 'Man life is tough there is no reason to be that happy', trigger: '9' },
+            ],
+          },
+
+          {
+            id: '7',
+            options: [
+              { value: 1, label: 'Shoot it', trigger: '8' },
+              { value: 2, label: 'You try not to think about you performance in "X-Men" ? 😅 ', trigger: '10' },
+            ],
+          },
+
+          {
+            id: '8',
+            message: 'I just smile to one person per day. You should definitely try :)',
+            trigger: '11',
+          },
+
+          {
+            id: '9',
+            message: 'You kidding ? I know a very simple way to be happier everyday',
+            trigger: '7',
+          },
+
+          {
+            id: '10',
+            message: 'Ahaha. Burn. No but for real I know a very simple way',
+            trigger: '8',
+          },
+
+          {
+            id: '11',
+            options: [
+              { value: 1, label: 'Nice. I will try', trigger: '12', todoId:0 },
+              { value: 2, label: 'I don`t like people', trigger: '14' },
+            ],
+          },
+
+          {
+            id: '12',
+            message: 'GREAT',
+            trigger: '13',
+          },
+
+          {
+            id: '13',
+            message: 'Wanna know about other tricks then ?',
+            trigger: '15',
+          },
+
+          {
+            id: '14',
+            message: 'Hahaha damn you`re a tough one 🤣',
+            trigger: '13',
+          },
+
+          {
+            id: '15',
+            options: [
+              { value: 1, label: 'Yeah, let`s try', trigger: '23' },
+              { value: 2, label: 'Dunno...', trigger: '31' },
+            ],
+          },
+
+          {
+            id: '16',
+            message: '2...',
+            trigger: '17',
+          },
+
+          {
+            id: '17',
+            message: '3...',
+            trigger: '18',
+          },
+
+          {
+            id: '18',
+            options: [
+              { value: 1, label: 'OKAY STOP please tell me your new trick', trigger: '30' },
+              { value: 2, label: 'Ready to hear that 😆', trigger: '19' },
+            ],
+          },
+
+          {
+            id: '19',
+            message: 'Hahaha see ? I made you laugh. This actually takes us to another advice !',
+            trigger: '20',
+          },
+
+          {
+            id: '20',
+            message: 'Sing you ass-off at least once per day. Pretty liberating.',
+            trigger: '21',
+          },
+
+          {
+            id: '21',
+            options: [
+              { value: 1, label: 'haha that`s a good one. I will try :)', trigger: '29', todoId:1 },
+              { value: 2, label: 'I don`t know, I`m such a lousy singer. You have sth else ?', trigger: '22' },
+            ],
+          },
+
+          {
+            id: '22',
+            message: 'Yup !',
+            trigger: '23',
+          },
+
+          {
+            id: '23',
+            message: 'I take this one from my movie "Les Intouchables". Talks about the importance of Friendship to overccome obstacles',
+            trigger: '24',
+          },
+
+          {
+            id: '24',
+            message: 'Every week, try to send a text to a friend you hav`nt seen in a long time.',
+            trigger: '25',
+          },
+
+          {
+            id: '25',
+            options: [
+              { value: 1, label: 'Damn, you`re right. Will do !', trigger: '28', todoId:2 },
+              { value: 2, label: 'I don`t have friends', trigger: '26' },
+            ],
+          },
+
+          {
+            id: '26',
+            message: 'Jeez !! I will be you friend ! Here is my number : 0756243947. Shoot me a text whenever you want :)',
+            trigger: '27',
+          },
+
+          {
+            id: '27',
+            options: [
+              { value: 1, label: 'Thanks bro :)'},
+            ],
+            end: true,
+          },
+
+          {
+            id: '28',
+            message: 'It was nice talking to you my friend !',
+            trigger: '27',
+          },
+
+          {
+            id: '29',
+            message: 'Cool ! I have one last advice !',
+            trigger: '23',
+          },
+
+          {
+            id: '30',
+            message: '🤣',
+            trigger: '23',
+          },
+
+          {
+            id: '31',
+            message: 'Sure about that ? Okay if you keep saying no I`m going to sing very loudly a Britney Spears Song. Ready ?',
+            trigger: '32',
+          },
+
+          {
+            id: '32',
+            message: '1...',
+            trigger: '16',
+          },
+
+      ]
+  },
+
 ];
 
 let usersData = [
