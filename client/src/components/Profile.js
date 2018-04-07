@@ -37,33 +37,36 @@ class Profile extends Component {
   render() {
     return (
       <div className="Profile">
-        <div class=" columns is-mobile">
-          <div class="profile-first-square column">
-            <img src={this.state.userPictureUrl}/>
-          </div>
-          <div class="column">
-            <br/>            <br/>
-            <p class="titles title is-3">{this.state.firstName}</p>
-            <p class="subtitle is-5">{this.state.userDescription}</p>
-            <button class="is-small">Add/change profile pic</button>
-            <button onClick={this.logout.bind(this)}>Log Out</button>
-          </div>
-        </div>
-        <h4 class="titles title is-4">This is your todo List !</h4>
-        {this.state.userTodos.map((t, i) =>
-        <div class="box">
-          <article class="media">
-            <div class="media-content">
-              <div class="content">
-                <label class="checkbox">
-                  <input type="checkbox"/>
-                    {"   "+t.description}
-                </label>
-              </div>
+        <div class="main-container container">
+          <div class=" columns is-mobile">
+            <div class="profile-first-square column">
+              <img class="img-cover" src={this.state.userPictureUrl}/>
             </div>
-          </article>
+            <div class="column">
+              <br/>            <br/>
+              <p class="titles title is-3">{this.state.firstName}</p>
+              <p class="subtitle is-5">{this.state.userDescription}</p>
+              <button class="button-change-pic button is-small">Change profile pic</button>
+              <br/>
+              <button class="button is-small" onClick={this.logout.bind(this)}>Log Out</button>
+            </div>
+          </div>
+          <h4 class="titles title is-4">This is your todo List !</h4>
+                  {this.state.userTodos.map((t, i) =>
+                    <div class="box">
+                      <article class="media">
+                        <div class="media-content">
+                          <div class="content">
+                            <label class="checkbox">
+                              <input type="checkbox"/>
+                                {"   "+t.description}
+                            </label>
+                          </div>
+                        </div>
+                      </article>
+                    </div>
+                  )}
         </div>
-      )}
       </div>
     );
   }

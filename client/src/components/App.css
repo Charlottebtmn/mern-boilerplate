@@ -56,9 +56,16 @@
 
 .App-header {
   background-color: #fec0aa;
-  height: 88px;
+  height: 94px;
   padding: 15px;
   color: white;
+  position: fixed;
+  width: 100%;
+  z-index: 1200;
+}
+
+.App-header + * {
+  padding-top: 88px;
 }
 
 .App-header a {
@@ -81,7 +88,7 @@
 }
 
 .logo {
-  height: 62px;
+  height: 70px;
 
 }
 
@@ -106,14 +113,30 @@
   height: 110px;
 }
 
+.img-cover {
+  object-fit: cover;
+}
+
 #root .middle-logo {
-  margin-right: 30px;
-  margin-left: 30px
+  margin-right: 5px;
+  margin-left: 5px
 }
 
 #root .header-home-page {
   padding-bottom: 20px;
   background-color: #fec0aa;
+}
+
+.btn-profile {
+  margin-left:-39px;
+}
+
+.btn-messages {
+  margin-right:-39px;
+}
+
+.button-change-pic {
+  margin-bottom : 10px
 }
 
 @keyframes App-logo-spin {
@@ -123,4 +146,20 @@
 
 .rsc-os-option .rsc-os-option-element {
   background: #fec0aa;
+}
+
+.main-container {
+  max-width: 400px !important;
+}
+
+/* For the footer of conversation */
+.rsc .rsc-container {
+  box-shadow: 0 0 0 0;
+  margin: auto;
+}
+.rsc .rsc-container .rsc-content {
+  height: 100%;
+}
+.rsc .rsc-container .rsc-footer {
+  display: none;
 }

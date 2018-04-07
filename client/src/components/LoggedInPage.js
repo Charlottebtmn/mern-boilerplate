@@ -25,13 +25,13 @@ class LoggedInPage extends Component {
         <div className="App">
           <header class="navbar" className="App-header">
             <Link to="/profile">
-              <img class="logo" src="/profile.png" />
+              <img class="btn-profile logo" src="/profile.png" />
             </Link>
             <Link to="/swipe">
               <img class="logo middle-logo" src="/the-good-d.png" />
             </Link>
             <Link to="/conversationlist">
-              <img class="logo" src="/messages.png" />
+              <img class="btn-messages logo" src="/messages.png" />
             </Link>
           </header>
           <Switch>

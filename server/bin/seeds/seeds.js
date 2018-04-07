@@ -8,33 +8,33 @@ let celebrityData = [
   {
     firstName: "Barack",
     lastName: "Obama",
-    occupation: "Former President of the USA",
+    occupation: "I know some great jokes",
     pictureUrl: "http://www.bravotv.com/sites/nbcubravotv/files/styles/blog-post--mobile/public/field_blog_image/2017/02/jet-set-obama-vacation.jpg?itok=zvWoPAjQ&timestamp=1485970411",
-    todos:["Whether you are male or female : fight sexism !","Listen to 'La Poudre' http://www.nouvellesecoutes.fr/la-poudre/"],
+    todos:["Read 'Inferior' by Angela Saini","Listen to 'La Poudre' : http://www.nouvellesecoutes.fr/la-poudre/"],
     conversationSteps: [
       {
         id: '1',
-        message: 'Hey, let’s meet!',
+        message: 'Hey, let’s talk!',
         trigger: '2',
       },
       {
         id: '2',
         options: [
-          { value: 1, label: 'nahh', trigger: '3' },
-          { value: 2, label: 'i’m bored', trigger: '31' },
-          { value: 3, label: 'sure!', trigger: '5' },
+          { value: 1, label: 'Nahh', trigger: '3' },
+          { value: 2, label: 'I’m bored', trigger: '3' },
+          { value: 3, label: 'Sure!', trigger: '5' },
         ],
       },
       {
         id: '3',
-        message: 'really? i know a great joke',
+        message: 'Really? i know a great joke',
         trigger: '4',
       },
       {
         id: '4',
         options: [
-          { value: 1, label: 'leave me alone dude', trigger: '31' },
-          { value: 2, label: 'mmmkay', trigger: '5' },
+          { value: 1, label: 'Leave me alone dude', trigger: '31' },
+          { value: 2, label: '...mmmkay', trigger: '5' },
         ],
       },
 
@@ -48,7 +48,7 @@ let celebrityData = [
         id: '6',
         options: [
           { value: 1, label: 'who cares? ', trigger: '31' },
-          { value: 2, label: 'mine is mango. i LOVE mangoes ', trigger: '7' },
+          { value: 2, label: 'Mine is mango. i LOVE mangoes ', trigger: '7' },
           { value: 3, label: 'hum.. tell me?', trigger: '11' },
         ],
       },
@@ -60,8 +60,8 @@ let celebrityData = [
       {
         id: '8',
         options: [
-          { value: 1, label: 'okay now i’m bored', trigger: '31' },
-          { value: 2, label: 'stop, you’re making me hungry ', trigger: '13' },
+          { value: 1, label: 'Okay now i’m bored', trigger: '31' },
+          { value: 2, label: 'Stop, you’re making me hungry ', trigger: '13' },
           { value: 3, label: 'YES!', trigger: '9' },
         ],
       },
@@ -76,7 +76,8 @@ let celebrityData = [
       {
         id: '10',
         options: [
-          { value: 1, label: 'yes i can’t wait !!!', trigger: '11' },
+          { value: 1, label: 'Yes i can’t wait !!!', trigger: '11' },
+          { value: 2, label:'No srsly I`m done with u', trigger: '31'}
          ],
       },
 
@@ -88,33 +89,34 @@ let celebrityData = [
       {
         id: '12',
         options: [
-          { value: 1, label: 'you perv’. i’m out of here', trigger: '13' },
+          { value: 1, label: 'OMG you perv’. i’m out of here', trigger: '13' },
           { value: 2, label: 'tell me more', trigger: '14' },
          ],
       },
 
       {
         id: '13',
-        message: 'Nooo you can’t leave. just wait for the answer. i promise you’ll be like that: 🤣',
+        message: 'Nooo you can’t leave. Just wait for the answer. I promise you’ll be like that: 🤣',
         trigger: '12',
       },
       {
         id: '14',
         options: [
           { value: 1, label: 'mmmmok...', trigger: '15' },
+          { value: 2, label: 'STOP', trigger: '32'}
         ],
       },
       {
         id: '15',
-        message: 'Welll Beethoven favorite’s fruit is... Ba-na-na-naaaa 🎶<br/> héhéhé… <br/> got it ?',
+        message: 'Welll Beethoven favorite’s fruit is... Ba-na-na-naaaa 🎶... héhéhé... got it ?',
         trigger: '16',
       },
       {
         id: '16',
         options: [
-          { value: 1, label: 'you’re such a loser. next!', trigger: '31' },
+          { value: 1, label: 'You’re such a loser. Next!', trigger: '32' },
           { value: 2, label: '🤔', trigger: '17' },
-          { value: 3, label: 'ahah', trigger: '17' },
+          { value: 3, label: 'Ahah', trigger: '17' },
         ],
       },
 
@@ -127,8 +129,8 @@ let celebrityData = [
       {
         id: '18',
         options: [
-          { value: 1, label: 'wait, who’s Michelle ?', trigger: '21' },
-          { value: 2, label: 'it’s ok. I laughed a little bit.', trigger: '19' },
+          { value: 1, label: 'Wait, who’s Michelle ?', trigger: '21' },
+          { value: 2, label: 'It’s ok. I laughed a little bit.', trigger: '19' },
         ],
       },
 
@@ -140,36 +142,38 @@ let celebrityData = [
       {
         id: '20',
         options: [
-          { value: 1, label: 'no way!', trigger: '22' },
-          { value: 2, label: 'you must be having fun!', trigger: '23' },
+          { value: 1, label: 'No way!', trigger: '35' },
+          { value: 2, label: 'You must be having fun!', trigger: '22' },
         ],
       },
 
       {
         id: '21',
         message: 'She’s… my roomate. kind of.',
-        trigger: '22',
+        trigger: '50',
       },
+
       {
         id: '22',
-        message: 'Actually, well, I live with three girls. Two of them are my daughters. And Michelle is my wife 😍. Did i mention that i’m a feminist?',
+        message: 'Looaaads of fun. Did i mention that i’m a feminist?',
         trigger: '23',
       },
       {
         id: '23',
         options: [
-          { value: 1, label: 'really?!', trigger: '24' },
-          { value: 2, label: 'me too!', trigger: '24' },
-          { value: 3, label: 'pfff', trigger: '24' },
+          { value: 1, label: 'really?!', trigger: '36' },
+          { value: 2, label: 'me too!', trigger: '37' },
+          { value: 3, label: 'pfff', trigger: '38' },
         ],
       },
 
 
       {
         id: '24',
-        message: 'Sure! It is absolutely men’s responsibility to fight sexism too. And as spouses and partners and boyfriends, we need to work hard and be deliberate about creating truly equal relationships.',
+        message: 'It is absolutely men’s responsibility to fight sexism too. And as spouses and partners and boyfriends, we need to work hard and be deliberate about creating truly equal relationships.',
         trigger: '25',
       },
+
       {
         id: '25',
         options: [
@@ -185,37 +189,160 @@ let celebrityData = [
         message: 'Sorry i’m taken... I would love to meet you though, I’m sure you would get along great with my daughters.',
         trigger: '27',
       },
+
       {
         id: '27',
         options: [
           { value: 1, label: 'wow. you’re like the best. dad. ever.', trigger: '28' },
+          { value: 2, label: 'screw Michelle, let`s go live together in the Bahamas', trigger: '39'}
         ],
       },
       {
         id: '28',
-        message: 'I’m serious! As I often say to my daughters 👧🏽 👩🏽 : it’s important that their dad is a feminist, because now that’s what they expect of all men.',
+        message: 'I always tell 👧🏽 👩🏽 one thing : it’s important that their dad is a feminist, because now that’s what they expect of all men.',
         trigger: '29',
       },
       {
         id: '29',
         options: [
           { value: 1, label: 'Ok now i’m convinced. I want to learn more about feminism. How can I do?', trigger: '30' },
+          { value: 2, label: 'Thanks but I think I already know a lot about feminism. Cheers !', trigger:'41'}
         ],
       },
+
       {
         id: '30',
-        message: 'Oh it’s quite simple. for instance you could listen to a great podcast: La poudre.',
-        trigger: '',
+        message: 'Oh it’s quite simple.',
+        trigger: '44',
       },
+
+
       {
         id: '31',
         message: 'No, don`t leave!',
         trigger: '17',
       },
 
+      {
+        id: '32',
+        message: 'No but really it`s funny :(',
+        trigger: '33',
+      },
 
+      {
+        id: '33',
+        message: '...',
+        trigger: '34',
+      },
 
+      {
+        id: '34',
+        message: '...',
+        trigger: '17',
+      },
 
+      {
+        id: '35',
+        message: 'They are the best people. And living with women only taught me a lot. I`m a feminist !',
+        trigger: '23',
+      },
+
+      {
+        id: '36',
+        message: 'Of course !',
+        trigger: '24',
+      },
+
+      {
+        id: '37',
+        message: 'Give me five ✋',
+        trigger: '24',
+      },
+
+      {
+        id: '38',
+        message: 'No I mean, really',
+        trigger: '24',
+      },
+
+      {
+        id: '39',
+        message: 'Haha you`re funny. But really no.',
+        trigger: '40',
+      },
+
+      {
+        id: '40',
+        message: 'I will remain a role model to my daughters !',
+        trigger: '28',
+      },
+
+      {
+        id: '41',
+        message: 'You sure ?',
+        trigger: '42',
+      },
+
+      {
+        id: '42',
+        options: [
+          { value: 1, label: 'Yes !', trigger: '41' },
+          { value: 2, label: '.. ok give me your tips !', trigger:'43'}
+        ]
+      },
+
+      {
+        id: '43',
+        message: 'aaaaaah :)',
+        trigger: '31',
+      },
+
+      {
+        id: '44',
+        message: 'I read this amazing book lately. "Inferior", by Angela Saini. You should definitely ready it',
+        trigger:'45'
+      },
+
+      {
+        id: '45',
+        options: [
+          { value: 1, label: 'Nice ! Adding this to my to-do !', trigger: '46', todoId:'0' },
+          { value: 2, label: 'Already read :) sth else ?', trigger:'47'},
+          { value: 3, label: 'No time to read. Anything else ?', trigger:'47'}
+        ],
+      },
+
+      {
+        id: '46',
+        message: 'Yipee !',
+        trigger: '47',
+      },
+
+      {
+        id: '47',
+        message: 'Then you should try and listen to this super cool Podcast : La Poudre !',
+        trigger: '48',
+      },
+
+      {
+        id: '48',
+        options: [
+          { value: 1, label: 'Thanks Barack ! Adding this to my To-Do as well !', trigger: '49', todoId:'1' },
+          { value: 2, label: 'Not interested but thanks :)', trigger:'49'},
+        ],
+      },
+
+      {
+        id: '49',
+        message:'You`re welcome :) see ya !',
+        end :true,
+      },
+
+      {
+        id: '50',
+        message:'Oh and just so you know, I`m a feminist 💪 ',
+        trigger: '23',
+      }
 
 
     ]
