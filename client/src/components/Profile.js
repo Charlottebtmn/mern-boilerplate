@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import api from '../api';
+import { Route, Link, Switch, withRouter } from 'react-router-dom';
+
 
 class Profile extends Component {
   constructor(props) {
@@ -66,6 +68,14 @@ class Profile extends Component {
                       </article>
                     </div>
                   )}
+                  <article class="message">
+                    <div class="message-body">
+                      Date more celebrities to add things to your to-do list !<br/>
+                      <Link to="/swipe">
+                        See celebrities
+                      </Link>
+                    </div>
+                  </article>
         </div>
       </div>
     );

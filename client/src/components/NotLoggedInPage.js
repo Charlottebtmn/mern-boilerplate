@@ -20,7 +20,7 @@ class NotLoggedInPage extends Component {
             <p class="subtitle is-5">Good Date, Good Deed</p>
           </div>
           <div class="subblock-home-page content">
-            <p>Signup to start dating Famous People <br/> and Do Good Things!</p>
+            <p>Date <b>Famous People</b>, <br/> generate <b>great actions</b> to accomplish !</p>
               <button class="button">
                 <Link to="/signup">Signup</Link>
               </button >

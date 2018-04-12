@@ -139,6 +139,11 @@
   margin-bottom : 10px
 }
 
+.message-body {
+  background-color: #fec0aa;
+  border-color:  #fec0aa;
+}
+
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
